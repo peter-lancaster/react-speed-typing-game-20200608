@@ -16,6 +16,20 @@ function App() {
       <Route exact path ="/" ><SpeedTyping /></Route>
       <Route path ="/contacts-list"><ContactsList /></Route>
     </Switch>
+    <p>fill up some space</p>
+    <br />
+    <p>fill up some space</p>
+    <br />
+    <p>fill up some space</p>
+    <br />
+    <p>fill up some space</p>
+    <p>fill up some space</p>
+    <br />
+    <p>fill up some space</p>
+    <br />
+    <p>fill up some space</p>
+    <br />
+    <p>fill up some space</p>
     <Footer />
 
     </>

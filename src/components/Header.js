@@ -3,17 +3,13 @@ import {Link} from "react-router-dom"
 
 function Header() {
 
-
-
-
-
     return(
         <header>
-            <Link to="/"><h1>Speed Typing Test</h1></Link>
-            <Link to="/contacts-list"><h1>Contacts List</h1></Link>
+            <h1>Pete's Mediocre React Portfolio</h1>
+            <Link to="/"><p className="header-link">Speed Typing Test</p></Link>
+            <Link to="/contacts-list"><p className="header-link" >Contacts List</p></Link>
         </header>
     )
-
 
 }
 
