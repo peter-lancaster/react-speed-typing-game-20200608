@@ -6,23 +6,21 @@ font-family: 'Pacifico', cursive;
 */
 
 html {
-  height: 100%;
-  padding: 0;
-  margin: 0;
+  height: 100%; /*This is necessary in order to keep the footer pushed down to the bottom of the screen*/
   background-color: #ffeead;
 }
 
 body {
-  margin: 0;
-  
 
-  min-height: 100vh;
-  position: relative;
+  margin : 0px; /*This is necessary in order have elements like "header and footer" go right to the edge of the screen*/
+  min-height: 100vh; /*This is necessary in order to keep the footer pushed down to the bottom of the screen*/
+  position: relative; /*This is necessary in order to apply some sort of "position" value to the body  */
 
   font-family: 'Fjalla One', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

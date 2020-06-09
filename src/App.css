@@ -3,10 +3,11 @@ header {
   display : flex;
   align-items : center;
   justify-content : flex-end;
-  width : 100%;
-  position : fixed;
-  height : 120px;
 
+  position : relative;
+  width : 100%;
+  top : 0;
+  height : 80px
 }
 
 header > h1 {
@@ -19,8 +20,28 @@ header > h1 {
   padding : 10px;
 }
 
+.sidebar {
+  position : absolute;
+  background : grey;
+  top : 80px; /*this matches header height */
+  bottom : 90px; /*this footer header height */
+  left : 90%; /*this keeps it stuck to left of page */
+  right : 0px; /*this allows visibility of rest of page*/
+}
+
+footer {
+  position: fixed;
+  background: green;
+  bottom : 0;
+  height : 90px;
+  width : 100%;
+}
+
+
+/* -------------------------------------------- */
+
 .speed-typing-main {
-  padding-top : 120px;
+  padding-right : 10%;
   display : flex;
   flex-direction : column;
   align-items : center;
@@ -33,16 +54,23 @@ header > h1 {
   font-size : 3.5vw;
 }
 
+/* -------------------------------------------- */
+.contacts-add-area {
+  display : flex
+}
+
+.contacts-list-notepad {
+  display : flex;
+  flex-direction : column;
+  align-items : center;
+  text-align : center;
+}
+
+/* -------------------------------------------- */
 button {
   padding : 10px;
   font-weight : 700;
   margin : 5px;
 }
 
-footer {
-  position: absolute;
-  background: green;
-  bottom : 0;
-  height : 120px;
-  width : 100%;
-}
+
