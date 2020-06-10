@@ -12,10 +12,17 @@ function ContactsList() {
             updateContactList,
             isButtonDisabled,
             firstNameWarning,
-            lastNameWarning} = useContext(Context)
+            lastNameWarning,
+            validateNamesNotBlank} = useContext(Context)
+
+    //PETE - WHY DOES THIS VALIDATION NEED TO BE HERE IN ContactsList?
+    //WHY DOESN'T IT WORK WHEN PLACED IN "ContextProvider" ?
+    validateNamesNotBlank()
 
     const contactListDisplay = contactList.map(element => {
-        return <ContactListItem key={element.firstName.concat(element.lastName)} item={element} />
+        return <ContactListItem 
+        key={element.firstName.concat(element.lastName)} 
+        item={element} />
     })
 
 
@@ -52,34 +59,7 @@ function ContactsList() {
 
         </main>
     )
-    
-    // return(
-        // <main className="contacts-list-main">
-        //     <div className ="contacts-add-area">
-        //         <p>Name to be added to contacts list : </p>
-        //         <input 
-        //             onChange={updateInputName} 
-        //             placeholder="First name" 
-        //             type="text" 
-        //             name="firstName"
-        //             value={inputName.firstName}>
-        //         </input>
-        //         <input 
-        //             onChange={updateInputName} 
-        //             placeholder="Last name" 
-        //             type="text" 
-        //             name="lastName"
-        //             value={inputName.lastName}>
-        //         </input>
-        //         <button onClick={updateContactList}>Add to contact list</button>
-        //     </div>
-        //     <div className="contacts-list-notepad">
-        //         <h1>List of contacts</h1>
-        //         {contactListDisplay}
-        //     </div>
 
-        // </main>
-    // )
 }
 
 
