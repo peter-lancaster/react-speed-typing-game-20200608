@@ -27,7 +27,14 @@ created it will look like this :
 
 "homepage": "http://yuribenjamin.github.io/my-app"
 
-PETE - I USED "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608"
+PETE - I USED "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608/"
+
+PETE NOTE THAT IF YOU MISS OFF THAT FINAL "/" YOU WILL JUST BE LEFT LOOKING AT YOUR README PAGE
+I.E. THIS WILL NOT WORK : "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608"
+
+
+
+
 
 Second in the existing scripts property we to need to add predeploy and deploy.
 
