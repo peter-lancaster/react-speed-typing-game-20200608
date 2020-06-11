@@ -1,13 +1,19 @@
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 const Context = React.createContext()
 
 function ContextProvider({children}) {
 
+    console.log("ContextProvider1")
+    
     const [contactList, setContactList] = useState([])
     const [inputName, setInputName] = useState({firstName : "", lastName : ""})
-    const [firstNameWarning, setFirstNameWarning] = useState("First name cannot be blank")
-    const [lastNameWarning, setLastNameWarning] = useState("Last name cannot be blank")
+    const [firstNameWarning, setFirstNameWarning] = useState("")
+    const [lastNameWarning, setLastNameWarning] = useState("")
     const [isButtonDisabled, setIsButtonDisabled] = useState(true)
+    const [isContactDuplicate, setIsContactDuplicate] = useState(false)
+    
+    // validateNamesNotBlank()
+    // Having validation of input fields not blank would work if 
 
     function updateInputName(event) {
 
@@ -18,9 +24,6 @@ function ContextProvider({children}) {
         // console.log(value)
 
         setInputName(prevInputName => {
-            console.log("in setInputName")
-            console.log({[name] : value})
-            console.log({...prevInputName, [name] : value})
             return {...prevInputName, [name] : value}
         })
 
@@ -33,10 +36,30 @@ function ContextProvider({children}) {
         //validateNamesNotBlank()
     }
 
+    function checkContactListForDuplicates(event) {
 
-    
-    function updateContactList(event) {
+        console.log("checkContactListForDuplicates")
+
         event.preventDefault()
+
+        const inputConcat = inputName.firstName.concat(inputName.lastName)
+
+        const checkArrayForDuplicate = contactList.some(element => {
+            const elementConcat = element.firstName.concat(element.lastName)
+            return inputConcat === elementConcat
+        })
+
+        if(checkArrayForDuplicate) {
+            setIsContactDuplicate(true)
+        } else {
+            setIsContactDuplicate(false)
+            updateContactList()
+        }
+
+    }
+    
+    function updateContactList() {
+        //event.preventDefault()
         setContactList(prevContactList => {
             return ([...prevContactList, inputName])
         })
@@ -46,33 +69,41 @@ function ContextProvider({children}) {
 
     function validateNamesNotBlank() {
 
-        console.log("in validateNamesNotBlank")
-        console.log(inputName.firstName)
-
-        if(inputName.firstName !== "") {
-            setFirstNameWarning("")
+        if(inputName.firstName === "") {
+            setFirstNameWarning("First name cannot be blank")
             console.log(firstNameWarning)
+        } else {
+            setFirstNameWarning("")
         }
 
-        if(inputName.lastName !== "") {
+        if(inputName.lastName === "") {
+            setLastNameWarning("Last name cannot be blank")
+        } else {
             setLastNameWarning("")
         }
 
         if(inputName.firstName !== "" && inputName.lastName !== "" ) {
             setIsButtonDisabled(false)  
+        } else {
+            setIsButtonDisabled(true) 
         }
 
     }
+
+    useEffect(function() {
+
+        validateNamesNotBlank()} 
+    ,[inputName])
 
     return(
         <Context.Provider value={{contactList, 
                                 inputName, 
                                 updateInputName, 
-                                updateContactList,
+                                checkContactListForDuplicates,
                                 isButtonDisabled,
                                 firstNameWarning,
                                 lastNameWarning,
-                                validateNamesNotBlank}}>
+                                isContactDuplicate}}>
             {children}
         </Context.Provider>
     )
