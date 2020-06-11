@@ -27,13 +27,7 @@ created it will look like this :
 
 "homepage": "http://yuribenjamin.github.io/my-app"
 
-PETE - I USED "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608/"
-
-PETE NOTE THAT IF YOU MISS OFF THAT FINAL "/" YOU WILL JUST BE LEFT LOOKING AT YOUR README PAGE
-I.E. THIS WILL NOT WORK : "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608"
-
-
-
+PETE - I USED "homepage" : "https://peter-lancaster.github.io/react-speed-typing-game-20200608"
 
 
 Second in the existing scripts property we to need to add predeploy and deploy.
@@ -57,7 +51,10 @@ git remote add origin git@github.com:Yuribenjamin/my-app.git
 
 PETE I SKIPPED THIS AS I'D ALREADY CREATED REPOSITORY AND LINKED TO WORK ON MY MACHINE.
 HOWEVER, I DID GO INTO THE SETTINGS FOR MY REPOSITORY AND ACTIVATE GITHUB PAGES FOR THE 
-APPROPRIATE REPOSITORY
+APPROPRIATE REPOSITORY 
+
+!!!!!ALSO BE AWARE THAT IN THE GITHUB PAGES SETTINGS SECTION, YOUR SOURCE NEEDS TO BE "gh-pages branch"
+AND NOT ANY OTHER BRANCH !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 ================================================================================
 
@@ -83,6 +80,8 @@ Visit deployed app
 git add .
 git commit -m "Your awesome message"
 git push origin master
+
+================================================================================
 
 Recap
 
