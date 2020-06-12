@@ -29,3 +29,17 @@ function App() {
 }
 
 export default App;
+
+
+//Notes on where you struggled and what you learned.
+//1) Getting the countdown to work properly - struggled for a while with useEffect /setTimeout /setInterval etc. This
+//was because you spent ages working with this:
+// useEffect(() => { code in here
+
+// ,[time])
+
+// When you needed this:
+
+// useEffect(() => { code in here
+
+//   ,[time, isGameRunning])
